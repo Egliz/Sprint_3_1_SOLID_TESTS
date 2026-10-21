@@ -3,6 +3,7 @@ package S;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class EmailTest {
 
@@ -13,5 +14,8 @@ public class EmailTest {
             Email.emailValidator("Email@atSign.com");});
     }
 
-    void
+    @Test
+    void emailValidator_noContainsDot_ThrowsException(){
+        assertThrows(IllegalArgumentException.class, () -> {Email.emailValidator("Email@dotCom");});
+    }
 }
