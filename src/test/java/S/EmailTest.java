@@ -8,7 +8,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class EmailTest {
 
     @Test
-        //metodo_condicion_resultado
     void emailValidator_containsAtSign_doesNotThrowsException() {
         assertDoesNotThrow(() -> {
             Email.emailValidator("Email@atSign.com");});
