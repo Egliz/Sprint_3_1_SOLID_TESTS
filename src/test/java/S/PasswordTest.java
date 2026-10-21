@@ -13,4 +13,9 @@ public class PasswordTest {
         assertThrows(IllegalArgumentException.class, () -> { Password.passwordValidator("password123");});
     }
 
+    @Test
+    void passwordValidator_withoutNumber_throwsException(){
+        assertThrows(IllegalArgumentException.class, () -> { Password.passwordValidator("password");});
+
+    }
 }
